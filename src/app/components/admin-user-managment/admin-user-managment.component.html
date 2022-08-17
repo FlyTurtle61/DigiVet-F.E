@@ -1,0 +1,27 @@
+<br>
+<br>
+<input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Lütfen Kullanıcı Email Yazınız..." [(ngModel)]="userNameText">
+<br>
+<br>
+<div *ngFor="let item of user | adminGetallUser:userNameText">
+  <!--  -->
+<div>
+<ngb-accordion #acc="ngbAccordion"
+			activeIds="ngb-panel-0">
+<ngb-panel title= "{{item.firstName}} {{item.lastName}}">
+	<ng-template ngbPanelContent>
+    Email: {{item.email}}<br>
+    Password: {{item.password}}<br>
+    City: {{item.city}}<br>
+    Country: {{item.country}}<br>
+    Adres: {{item.adress}}
+
+
+  <br>
+  <button type="button" class="btn btn-danger" (click)= deleteClick(item.id)>Kullanıcıyı Sil</button>
+
+	</ng-template>
+</ngb-panel>
+
+</ngb-accordion>
+</div>

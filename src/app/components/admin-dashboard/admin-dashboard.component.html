@@ -1,0 +1,30 @@
+<!-- <p>home-page-for-user works!</p>
+<h2>{{ message$ | async }}</h2> -->
+<app-navbar></app-navbar>
+<!-- <head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head> -->
+
+<div class="body-home row" >
+
+  <div class="tab col-md-3">
+
+    <button class="tablinks"  id="defaultOpen" [routerLink]="['./admin-create']">Yönetici Ekle</button>
+    <button class="tablinks" [routerLink]="['./admin-meeting-manager']" >Randevular</button>
+    <button class="tablinks" [routerLink]="['./admin-comment']" >Yorumlar</button>
+    <button class="tablinks" [routerLink]="['./admin-recommended-manager']" >Talep Yönetim Paneli</button>
+    <button class="tablinks" [routerLink]="['./admin-cancelled-meeting']">İptal Edilen Randevular</button>
+    <button class="tablinks" [routerLink]="['./vet-list']" >Vetriner Kullanıcı Paneli</button>
+    <button class="tablinks" [routerLink]="['./user-list']">Kullanıcı Kullanıcı Paneli</button>
+
+  </div>
+
+  <div class="col-md-8 ">
+    <router-outlet></router-outlet>
+
+  </div>
+
+</div>
+
+

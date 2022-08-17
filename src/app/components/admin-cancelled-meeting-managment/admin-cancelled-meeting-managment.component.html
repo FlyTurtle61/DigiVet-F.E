@@ -1,0 +1,25 @@
+<br>
+<br>
+<input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Lütfen Kullanıcı Email Yazınız..." [(ngModel)]="userEmailText">
+<br>
+<br>
+<div *ngFor="let item of cancelledData | adminCancelled:userEmailText">
+  <!-- *ngFor="let item of comment | commentManager:userNameText"  userEmailText:any-->
+
+
+  <div class="card" style="width: 18rem;" >
+    <div class="card-body">
+      <h5 class="card-title">Veteriner :{{item.vetEmail}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">Kullanıcı :{{item.userEmail}}</h6>
+      <p class="card-text">{{item.description}}</p>
+
+    </div>
+
+
+
+  </div>
+  <br>
+
+
+</div>
+

@@ -1,0 +1,44 @@
+.deneme{
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  }
+  .kutu{
+  width: 40%;
+  height: 50px;
+  border: solid black 1px;
+  margin: 1%;
+  border-radius: 100px;
+  }
+  .kutu-photo{
+  width: 200px;
+  height: 200px;
+  border: solid black 1px;
+  }
+  .kutu p.quest{
+    float: left;
+    text-align: left;
+    padding-left: 5%;
+    width: 20%;
+    user-select: none;
+  }
+  .kutu p.answer{
+    float: left;
+    text-align: left;
+    padding-left: 5%;
+    width: 70%;
+    user-select: none;
+  }
+  .tabcontent {
+    float: left;
+    padding: 0px 12px;
+    border: 1px solid #ccc;
+    width: 68%;
+    border-left: none;
+    height: 80vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }

@@ -1,0 +1,67 @@
+<div class="body">
+  <div class="login-wrap">
+    <div class="login-html">
+        <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label style="margin-left: 60px;"
+            for="tab-1" class="tab" >Giriş Yap</label>
+        <input id="tab-2" type="radio" name="tab" class="sign-up"><label style="margin-left: 60px;" for="tab-2"
+            class="tab">Kayıt Ol</label>
+        <div class="login-form">
+            <div class="sign-in-htm">
+                <div class="group">
+                    <label for="user" class="label">E-mail</label>
+                    <input id="user" type="email" required autofocus class="input" #email>
+                </div>
+                <div class="group">
+                    <label for="user" class="label">Şifre</label>
+                    <input id="user" type="password" required class="input" #password>
+                </div>
+
+                <div class="group">
+                    <input type="submit" class="button" value="Giriş"(click) = "loginClick(email.value,password.value)">
+                </div>
+                <div class="hr"></div>
+                <div class="foot-lnk">
+                    <a href="#forgot">Şifreni mi unuttun?</a>
+                </div>
+            </div>
+            <div class="sign-up-htm">
+                <div class="group">
+                    <label for="user" class="label" >Adınız</label>
+                    <input id="user" type="text" class="input" required autofocus #firstName>
+                </div>
+                <div class="group">
+                    <label for="user" class="label" >Soyadınız</label>
+                    <input id="user" type="text" class="input" required #lastName>
+                </div>
+                <div class="group">
+                    <label for="user" class="label" >Şifre</label>
+                    <input id="user" type="password" class="input" required #passwordSignUp>
+                </div>
+                <div class="group">
+                    <label for="user" class="label" >Ülke</label>
+                    <input id="user" type="text" class="input" required #country>
+                </div>
+                <div class="group">
+                    <label for="user" class="label" >Şehir</label>
+                    <input id="user" type="text" class="input" required #city>
+                </div>
+                <div class="group">
+                    <label for="user" class="label" >E-Mail</label>
+                    <input id="user" type="email" class="input" required #emailSignUp >
+                </div>
+                <div class="group">
+                    <label for="user" class="label" >Adres</label>
+                    <input id="user" type="text" class="input" required #adress>
+                </div>
+                <div class="group">
+                    <input type="submit" class="button" value="Kayıt Ol" (click) = "saveClick(firstName.value,lastName.value,emailSignUp.value,passwordSignUp.value,city.value,country.value,adress.value)">
+                </div>
+                <div class="hr"></div>
+                <div class="foot-lnk">
+                    <label for="tab-1">Çoktan Üye Misiniz?</label>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  </div>

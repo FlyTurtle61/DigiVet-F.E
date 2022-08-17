@@ -1,0 +1,20 @@
+<div *ngFor="let item of todo">
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">{{item.reportedMail}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{item.status}}</h6>
+    <p class="card-text">{{item.description}}</p>
+
+    <br>
+    <div class="form-floating">
+      <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px" #response></textarea>
+      <label for="floatingTextarea2">Yorumunuz</label>
+    </div>
+    <br>
+    <button type="button" class="btn btn-primary" (click)="clickInProgress(item.id,item.reportedMail,item.description,response.value)" >Çalışmayı Tamamla</button>
+
+  </div>
+</div>
+<br>
+
+</div>

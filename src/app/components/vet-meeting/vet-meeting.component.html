@@ -1,0 +1,67 @@
+<br>
+<br>
+<input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Kullanıcı Arama" [(ngModel)]="userNameText">
+<br>
+<br>
+<div *ngFor="let item of meetDetails | vetMeetFilter:userNameText">
+<ngb-accordion #acc="ngbAccordion"
+			activeIds="ngb-panel-0" >
+<ngb-panel title="{{item.userFirstName}} {{item.userLastName}}">
+	<ng-template ngbPanelContent>
+
+      Veteriner: Veteriner Hekim <label>{{item.vetFirstName}}</label> &nbsp; <label>{{item.vetLastName}}</label> <br>
+
+      Muayene Tipi: {{item.meetingType}}<br>
+      Muayene Tarihi: {{item.meetingDate}}<br>
+      Kullanıcı Email: {{item.userEmail}}<br>
+
+    tarih Güncelleme:
+
+    <div class="container">
+      <mat-form-field appearance="outline">
+          <mat-label>Saat</mat-label>
+          <input matInput [(ngModel)]="time" [ngxMatTimepicker]="picker">
+          <ngx-mat-timepicker #picker></ngx-mat-timepicker>
+      </mat-form-field>
+
+      <router-outlet></router-outlet>
+      <pre>Selected time: {{ time | json}}</pre>
+
+  </div>
+
+  <label for="birthday">Tarih :</label><br>
+  <input type="date" id="birthday" name="birthday" #date>
+
+  <br>
+  <br>
+  <button type="button" class="btn btn-primary" (click) = updateClick(item.id,item.userFirstName,item.userLastName,item.vetFirstName,item.vetLastName,item.meetingType,date.value,item.vetEmail,item.userEmail)>Tarihi Güncelle</button>
+
+
+  <hr>
+
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">İptal Sebebini Yazınız:</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" #description></textarea>
+  </div>
+  <br>
+  <button type="button" class="btn btn-danger" (click)= canceledClick(item.id,item.vetEmail,item.userEmail,description.value)>Randevu İptal</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</ng-template>
+</ngb-panel>
+
+</ngb-accordion>
+</div>

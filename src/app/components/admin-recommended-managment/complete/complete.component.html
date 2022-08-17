@@ -1,0 +1,18 @@
+
+<div *ngFor="let item of complete">
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">{{item.reportedMail}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{item.status}}</h6>
+    <p class="card-text">{{item.description}}</p>
+    <br>
+    <h5>Admin Cevabı:</h5>
+    <p class="card-text card">{{item.response}}</p>
+
+    <button type="button" class="btn btn-danger" (click) = deleteClick(item.id)>Kaydı Sil</button>
+
+
+  </div>
+</div>
+<br>
+</div>

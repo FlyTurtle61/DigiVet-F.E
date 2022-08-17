@@ -1,0 +1,25 @@
+<br>
+<br>
+<div *ngFor="let item of comment2">
+<ngb-accordion #acc="ngbAccordion"
+			activeIds="ngb-panel-0">
+<ngb-panel title= {{item.createComment}}>
+	<ng-template ngbPanelContent>
+	{{item.comment}}
+  <div style="position: right;">{{item.date}}</div>
+
+  <hr>
+
+
+  <div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label">Cevap</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" #description>{{item.userEmail}}</textarea>
+    <br>
+    <button type="button" class="btn btn-primary" (click) =  createComment(item.userEmail,description.value)>Yorum Yap</button>
+
+  </div>
+	</ng-template>
+</ngb-panel>
+
+</ngb-accordion>
+</div>

@@ -1,0 +1,26 @@
+<br>
+<br>
+<input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Lütfen Kullanıcı Email Yazınız..." [(ngModel)]="userEmailText">
+<br>
+<br>
+<div *ngFor="let item of meet | meetingControl:userEmailText">
+<ngb-accordion #acc="ngbAccordion"
+			activeIds="ngb-panel-0">
+<ngb-panel title= "Kullanıcı : {{item.userEmail}} | Veteriner Hekim: {{item.vetEmail}}">
+	<ng-template ngbPanelContent>
+	Veteriner: Veteriner Hekim {{item.vetFirstName}} {{item.vetLastName}}<br>
+  Kullanıcı: {{item.userFirstName}} {{item.userLastName}}<br>
+  Veteriner Email: {{item.vetEmail}}<br>
+  Kullanıcı Email: {{item.userEmail}}<br>
+
+
+  <div style="position: right;">{{item.meetingDate}}</div>
+
+
+
+	</ng-template>
+</ngb-panel>
+
+</ngb-accordion>
+</div>
+

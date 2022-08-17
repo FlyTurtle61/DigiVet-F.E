@@ -1,0 +1,26 @@
+<br>
+<br>
+<input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Lütfen Vetereriner İsmini Yazınız..." [(ngModel)]="vetNameText">
+<br>
+<br>
+<div *ngFor="let item of meetDetails | userMeet:vetNameText">
+<ngb-accordion #acc="ngbAccordion"
+			activeIds="ngb-panel-0" >
+<ngb-panel title="Veteriner Hekim : {{item.vetFirstName}} {{item.vetLastName}}">
+	<ng-template ngbPanelContent>
+
+      Veteriner: Veteriner Hekim <label>{{item.vetFirstName}}</label> &nbsp; <label>{{item.vetLastName}}</label> <br>
+
+      Muayene Tipi: {{item.meetingType}}<br>
+      Muayene Tarihi: {{item.meetingDate}}<br>
+      Kullanıcı Email: {{item.userEmail}}<br>
+
+
+<hr>
+
+  <button type="button" class="btn btn-danger" (click) = deleteClick(item.id)>Randevu İptal</button>
+	</ng-template>
+</ngb-panel>
+
+</ngb-accordion>
+</div>

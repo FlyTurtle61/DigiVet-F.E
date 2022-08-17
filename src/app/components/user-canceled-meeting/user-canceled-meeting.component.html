@@ -1,0 +1,25 @@
+<br>
+<br>
+<input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Veteriner Arama" [(ngModel)]="searchText">
+<br>
+<br>
+<div *ngFor="let item of canceledMeeting">
+<ngb-accordion #acc="ngbAccordion"
+			activeIds="ngb-panel-0" >
+<ngb-panel title="{{item.vetEmail}}">
+	<ng-template ngbPanelContent>
+
+      Veteriner: Veteriner Hekim <label>{{item.vetEmail}}</label><br>
+
+      Açıklama: {{item.description}}<br>
+
+      Kullanıcı: {{item.userEmail}}
+
+
+<hr>
+
+	</ng-template>
+</ngb-panel>
+
+</ngb-accordion>
+</div>

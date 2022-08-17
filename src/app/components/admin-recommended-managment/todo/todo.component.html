@@ -1,0 +1,15 @@
+<div *ngFor="let item of todo">
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">{{item.reportedMail}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{item.status}}</h6>
+    <p class="card-text">{{item.description}}</p>
+
+    <button type="button" class="btn btn-primary"  (click) = clickInProgress(item.id,item.reportedMail,item.description)>Çalışmaya Başla</button>
+
+
+  </div>
+
+</div>
+<br>
+</div>

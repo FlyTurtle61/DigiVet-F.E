@@ -1,0 +1,127 @@
+
+
+<br>
+<input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Yaşadığınız Şehir Ülke Yada Bölge Adını yazınız" [(ngModel)]="adressText">
+
+<br>
+
+
+<br>
+<div *ngFor="let item of meets | vetCountry:adressText">
+<div class="row row-cols-1 row-cols-md-3 g-4" style="width: 300%;">
+  <div class="col">
+    <div class="card h-100">
+
+      <div class="card-body">
+
+        <h5 class="card-title">Vetereriner Hekim: {{item.firstName}} {{item.lastName}}</h5>
+        <p class="card-text">
+          Klinik : {{item.hospital}}<br>
+          Branş: {{item.branch}}<br>
+          Şehir: {{item.city}}<br>
+          Ülke: {{item.country}}<br>
+          Email: {{item.email}}<br>
+          Addres: {{item.adress}}<br>
+        </p>
+        <ngb-accordion #acc="ngbAccordion"
+        activeIds="ngb-panel-0" >
+  <ngb-panel title="Randevu Oluştur">
+    <ng-template ngbPanelContent>
+
+      <div class="container">
+        <mat-form-field appearance="outline">
+            <mat-label>Saat</mat-label>
+            <input matInput [(ngModel)]="time" [ngxMatTimepicker]="picker">
+            <ngx-mat-timepicker #picker></ngx-mat-timepicker>
+        </mat-form-field>
+
+        <router-outlet></router-outlet>
+        <br>
+        <label for="birthday">Tarih :</label><br>
+        <input type="date" id="birthday" name="birthday" #date>
+       <br>
+       <br>
+       <label>Randevu Tipini Seçiniz :</label>
+       <br>
+       <br>
+        <select class="form-select" aria-label="Default select example" #meetingType>
+          <option value="Muayene">Muayene</option>
+          <option value="Tetkik">Tetkik</option>
+          <option value="Ameliyat">Ameliyat</option>
+          <option value="Diger">Diğer</option>
+        </select>
+    </div>
+
+
+
+  <hr>
+
+    <button type="button" class="btn btn-primary" (click) = createMeet(item.firstName,item.lastName,meetingType.value,date.value,item.email)>Randevu Oluştur</button>
+    </ng-template>
+  </ngb-panel>
+
+  </ngb-accordion>
+  <ngb-accordion #acc="ngbAccordion" (click) = getAllComment(item.email)
+  activeIds="ngb-panel-0">
+<ngb-panel title= Yorumlar  >
+<ng-template ngbPanelContent>
+<div  *ngFor="let data of comments">
+<div style="border: 1px solid; border-radius: 10px; padding: 1%;">
+          <h5 class="card-title">{{data.createComment}}</h5>
+          <hr>
+          <p class="card-text">{{data.comment}}</p>
+</div>
+<br>
+</div>
+</ng-template>
+</ngb-panel>
+
+</ngb-accordion>
+<ngb-accordion #acc="ngbAccordion"
+  activeIds="ngb-panel-0" >
+<ngb-panel title= "Yorum Yap" >
+<ng-template ngbPanelContent>
+
+  <div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label">Yorum:</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" #description></textarea>
+  </div>
+
+<br>
+
+<button type="button" class="btn btn-primary" (click) =  createComment(item.email,description.value)>Yorum Yap</button>
+</ng-template>
+</ngb-panel>
+
+</ngb-accordion>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<!-- <br>
+<br>
+<input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Kullanıcı Arama">
+<br>
+<br>
+<div >
+<ngb-accordion #acc="ngbAccordion"
+			activeIds="ngb-panel-0" >
+<ngb-panel title="item.VetFirstName item.VetLastName">
+	<ng-template ngbPanelContent>
+
+      Veteriner: Veteriner Hekim <label>item.vetFirstName</label> &nbsp; <label>item.vetLastName</label> <br>
+
+      Muayene Tipi: item.meetingType<br>
+      Muayene Tarihi: item.meetingDate<br>
+      Kullanıcı Email: item.userEmail<br>
+
+
+<hr>
+
+  <button type="button" class="btn btn-danger">Randevu İptal</button>
+	</ng-template>
+</ngb-panel>
+
+</ngb-accordion>
+</div> -->
